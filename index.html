@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Al-Hafiz Sweets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="bg-gray-900 text-white">
+
+  <!-- Navbar -->
+  <header class="bg-black bg-opacity-90 fixed top-0 left-0 w-full z-10">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      </div>
+      <nav class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-black bg-opacity-60">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+          
+          <!-- Left: Your brand/logo -->
+          <div class="flex items-center">
+            <h1 class="text-xl font-bold">
+              <span class="bg-white text-orange-500 px-2 py-1 rounded-full border-2 border-orange-500">
+                Mehran
+              </span>
+              <span class="text-orange-400 ml-2">Sweets</span>
+            </h1>
+          </div>
+      
+          <!-- Right: Login & Signup -->
+          <div class="flex space-x-4">
+            <button id="login-btn"
+                    class="text-white border-2 border-white px-4 py-2 rounded-full font-semibold transition duration-300 hover:bg-white hover:text-black">
+              Login
+          </button>
+            <button id="signup-btn"
+              class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-full font-semibold transition duration-300">
+              Signup
+            </button>
+          </div>
+        </div>
+      </nav>
+  </header>
+  
+  <!-- Login Form Modal -->
+  <div id="login-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black bg-opacity-70">
+    <div class="bg-gray-800 rounded-lg p-8 max-w-md w-full mx-4">
+      <div class="flex justify-between items-center mb-6">
+        <h3 class="text-2xl font-bold">Login</h3>
+        <button id="close-login" class="text-gray-400 hover:text-white">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <form>
+        <div class="mb-4">
+          <label class="block text-gray-300 mb-2" for="login-email">Email</label>
+          <input type="email" id="login-email" class="w-full px-4 py-2 bg-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-orange-500">
+        </div>
+        <div class="mb-6">
+          <label class="block text-gray-300 mb-2" for="login-password">Password</label>
+          <input type="password" id="login-password" class="w-full px-4 py-2 bg-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-orange-500">
+        </div>
+        <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded">
+          Login
+        </button>
+        <p class="text-center mt-4 text-gray-400">
+          Don't have an account? <button id="switch-to-signup" class="text-orange-500 hover:underline">Sign up</button>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Signup Form Modal -->
+  <div id="signup-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black bg-opacity-70">
+    <div class="bg-gray-800 rounded-lg p-8 max-w-md w-full mx-4">
+      <div class="flex justify-between items-center mb-6">
+        <h3 class="text-2xl font-bold">Sign Up</h3>
+        <button id="close-signup" class="text-gray-400 hover:text-white">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <form>
+        <div class="mb-4">
+          <label class="block text-gray-300 mb-2" for="signup-name">Full Name</label>
+          <input type="text" id="signup-name" class="w-full px-4 py-2 bg-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-orange-500">
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-300 mb-2" for="signup-email">Email</label>
+          <input type="email" id="signup-email" class="w-full px-4 py-2 bg-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-orange-500">
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-300 mb-2" for="signup-password">Password</label>
+          <input type="password" id="signup-password" class="w-full px-4 py-2 bg-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-orange-500">
+        </div>
+        <div class="mb-6">
+          <label class="block text-gray-300 mb-2" for="signup-confirm-password">Confirm Password</label>
+          <input type="password" id="signup-confirm-password" class="w-full px-4 py-2 bg-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-orange-500">
+        </div>
+        <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded">
+          Sign Up
+        </button>
+        <p class="text-center mt-4 text-gray-400">
+          Already have an account? <button id="switch-to-login" class="text-orange-500 hover:underline">Login</button>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="home" class="pt-20 md:pt-24 pb-12 bg-cover bg-center" 
+    style="background-image: url(https://images.unsplash.com/photo-1555507036-ab1f4038808a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80);">
+    <div class="container mx-auto px-4 md:px-20 flex flex-col md:flex-row items-center justify-between">
+      <div class="max-w-lg">
+        <h2 class="text-3xl md:text-5xl font-extrabold leading-tight mb-6">
+          Delicious <span class="text-orange-500">Sweets</span> &amp; <span class="text-orange-500">Bakery</span> Products
+        </h2>
+        <p class="text-gray-300 mb-8">
+          Experience the authentic taste of traditional sweets and bakery items made with love and premium ingredients.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#order" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-full text-center">
+            Order Online
+          </a>
+          <button id="open-menu" class="border-2 border-white hover:bg-white hover:text-gray-900 font-bold py-3 px-6 rounded-full text-center">
+            Our Menu
+          </button>
+        </div>
+      </div>
+
+      <!-- Opening Hours Card -->
+      <div class="mt-12 md:mt-0 bg-gray-800 bg-opacity-80 p-6 sm:p-8 rounded-2xl text-center backdrop-blur-sm">
+        <div class="flex justify-center mb-4">
+          <div class="bg-orange-500 p-3 rounded-full">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" 
+                 viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" 
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+        </div>
+       
+    </div>
+  </section>
+
+  <!-- Menu Section (Initially Hidden) -->
+  <section id="menu-section" class="hidden bg-white text-black py-12">
+    <div class="container mx-auto px-4 md:px-20">
+      <h2 class="text-4xl font-bold text-center mb-10">Why choose Mehran Bakers</h2>
+      <div class="grid gap-8 md:grid-cols-3 sm:grid-cols-1">
+        
+        <div class="bg-gray-100 rounded-lg p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 overflow-hidden group">
+          <div class="overflow-hidden rounded-md mb-4">
+            <img src="https://media.istockphoto.com/id/1188000786/photo/gulab-jamun-in-bowl-on-wooden-background-indian-dessert-or-sweet-dish.webp?a=1&b=1&s=612x612&w=0&k=20&c=4kVDa_BP4pypOSvfDSL2mmLNO3SYdoAs1VG-qi4WAtI=" 
+                 alt="Gulab Jamun" 
+                 class="w-full h-48 object-cover rounded-md group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <h3 class="text-2xl font-semibold mb-2">Gulab Jamun</h3>
+          <p class="text-gray-600">Soft milk-solid balls soaked in rose-scented syrup.</p>
+        </div>
+  
+        <div class="bg-gray-100 rounded-lg p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 overflow-hidden group">
+          <div class="overflow-hidden rounded-md mb-4">
+            <img src="https://media.istockphoto.com/id/183422455/photo/perfect-baklava-with-pistachio-arranged-on-a-white-plate.jpg?s=1024x1024&w=is&k=20&c=A7jMnPsSQgcEcZ_3PM1bHuwb7HCESikAB1PhvZXKXN8=" 
+                 alt="Baklava" 
+                 class="w-full h-48 object-cover rounded-md group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <h3 class="text-2xl font-semibold mb-2">Baklava</h3>
+          <p class="text-gray-600">Layered pastry with nuts and sweet honey syrup.</p>
+        </div>
+  
+        <div class="bg-gray-100 rounded-lg p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 overflow-hidden group">
+          <div class="overflow-hidden rounded-md mb-4">
+            <img src="https://media.istockphoto.com/id/1709721394/photo/delicious-chocolate-chip-cookies.webp?a=1&b=1&s=612x612&w=0&k=20&c=WrWtJgTdxpks4TNnJp4PQ7JWRFFM7k00V3m6-9sNdJ8=" 
+                 alt="Cookies" 
+                 class="w-full h-48 object-cover rounded-md group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <h3 class="text-2xl font-semibold mb-2">Cookies</h3>
+          <p class="text-gray-600">Freshly baked cookies in various flavors.</p>
+        </div>
+  
+        <div class="bg-gray-100 rounded-lg p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 overflow-hidden group">
+          <div class="overflow-hidden rounded-md mb-4">
+            <img src="https://media.istockphoto.com/id/155598375/photo/dessert-chocolate-cake.webp?a=1&b=1&s=612x612&w=0&k=20&c=FIkAx7S85NyPoo714_oyeo1IEU92uhbRwk2ftbaGCc0=" 
+                 alt="Chocolate Cake" 
+                 class="w-full h-48 object-cover rounded-md group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <h3 class="text-2xl font-semibold mb-2">Chocolate Cake</h3>
+          <p class="text-gray-600">Rich chocolate cake with creamy frosting.</p>
+        </div>
+  
+        <div class="bg-gray-100 rounded-lg p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 overflow-hidden group">
+          <div class="overflow-hidden rounded-md mb-4">
+            <img src="https://media.istockphoto.com/id/1283207206/photo/cashew-katli.webp?a=1&b=1&s=612x612&w=0&k=20&c=yi2jOyRm6W7VBJTeBYuTbH4QW3tk1M3Ow9JegUcGaEk=" 
+                 alt="Barfi" 
+                 class="w-full h-48 object-cover rounded-md group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <h3 class="text-2xl font-semibold mb-2">Cashew Katli</h3>
+          <p class="text-gray-600">A rich and delicious Indian sweet made with cashews.</p>
+        </div>
+        
+        <div class="bg-gray-100 rounded-lg p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 overflow-hidden group">
+          <div class="overflow-hidden rounded-md mb-4">
+            <img src="https://media.istockphoto.com/id/2173276009/photo/delicious-cakes-on-a-table-in-a-cafe.webp?a=1&b=1&s=612x612&w=0&k=20&c=-W_yZgvP2RTU8EMz750jUTk-YKj6BMmFBHCp_3GWQB0=" 
+                 alt="Pastries" 
+                 class="w-full h-48 object-cover rounded-md group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <h3 class="text-2xl font-semibold mb-2">Pastries</h3>
+          <p class="text-gray-600">Buttery pastries filled with sweet or savory goodness.</p>
+        </div>
+      </div>
+    </div>
+</section>
+  <section class="container mx-auto px-4 py-12">
+    <div class="flex flex-col md:flex-row items-start md:items-center bg-gray-800 p-6 rounded-xl">
+      <!-- Left: Product Image -->
+      <div class="flex-shrink-0">
+        <img src="background 2.jpg"
+          alt="Product Name"
+          class="w-80 h-80 object-cover rounded-lg shadow-lg"
+        />
+      </div>
+  
+      <!-- Right: Text -->
+      <div class="mt-6 md:mt-0 md:ml-8 text-white">
+        <h2 class="text-4xl font-extrabold mb-4">Chocolate Lava Cake</h2>
+        <p class="text-lg leading-relaxed">
+          “I absolutely love this product! The build quality is fantastic, the
+          design is sleek and modern, and it performs exactly as advertised.
+          Highly recommended to anyone looking for this taste”
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="bg-gray-800 py-12 px-4">
+    <div class="container mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Specialties</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      </div>
+      <body class="bg-gray-900 text-white">
+        <div class="min-h-screen flex flex-col items-center justify-center">
+          <!-- Flex container for cards -->
+          <div class="flex flex-row gap-6 flex-wrap justify-center p-6">
+            
+            <!-- Product Card 1 -->
+            <body class="bg-gray-900 text-white">
+              <div class="min-h-screen flex flex-col items-center justify-center p-6">
+                <!-- Horizontal Card Container -->
+                <div class="flex flex-wrap justify-center gap-6">
+            
+                  <!-- Product Card 1 -->
+                  <body class="bg-gray-900 text-white">
+                    <div class="min-h-screen flex flex-col items-center justify-center p-6">
+                      <!-- Horizontal Flex Container to align all cards in one row -->
+                      <div class="flex flex-row justify-evenly gap-6 w-full">
+                  
+                        <!-- Product Card 1 -->
+                        <div class="w-full max-w-sm bg-gray-700 rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
+                          <div class="h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1666190092159-3171cf0fbb12?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z3VsYWJqYW11bnxlbnwwfHwwfHx8MA%3D%3D" 
+                                 alt="Gulab Jamun" 
+                                 class="w-full h-full object-cover">
+                          </div>
+                          <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Gulab Jamun</h3>
+                            <p class="text-gray-300 mb-4">Soft milk-solid balls soaked in rose-scented syrup, a traditional Indian sweet.</p>
+                            <div class="flex justify-between items-center">
+                              <span class="text-xl font-bold text-orange-500">Rs 900</span>
+                              <button class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-full transition duration-300">
+                                Order Now
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                  
+                        <!-- Product Card 2 -->
+                        <div class="w-full max-w-sm bg-gray-700 rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
+                          <div class="h-64 overflow-hidden">
+                            <img src="https://media.istockphoto.com/id/2209372113/photo/delicious-baklava-pieces-arranged-neatly-on-a-white-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=-LsGedCIpYVJyFT26MA7kYkjxOSb2xO8b2mH3DF1jM4=" 
+                                 alt="Baklava" 
+                                 class="w-full h-full object-cover">
+                          </div>
+                          <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Premium Baklava</h3>
+                            <p class="text-gray-300 mb-4">Layered pastry with premium pistachios and sweet honey syrup.</p>
+                            <div class="flex justify-between items-center">
+                              <span class="text-xl font-bold text-orange-500">Rs 1200</span>
+                              <button class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-full transition duration-300">
+                                Order Now
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                  
+                        <!-- Product Card 3 -->
+                        <div class="w-full max-w-sm bg-gray-700 rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
+                          <div class="h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2hvY29sYXRlJTIwY2FrZXxlbnwwfHwwfHx8MA%3D%3D" 
+                                 alt="Chocolate Cake" 
+                                 class="w-full h-full object-cover">
+                          </div>
+                          <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2 text-white">Chocolate Fudge Cake</h3>
+                            <p class="text-gray-300 mb-4">Rich chocolate cake with layers of fudge and creamy frosting.</p>
+                            <div class="flex justify-between items-center">
+                              <span class="text-xl font-bold text-orange-500">Rs 1000</span>
+                              <button class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-full transition duration-300">
+                                Order Now
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </body>
+                  
+    <!-- ✅ Footer -->
+     <!-- Footer -->
+<footer class="bg-black w-full text-white pt-12 pb-8 px-4 md:px-20">
+  <div class="flex flex-col md:flex-row justify-between max-w-7xl mx-auto space-y-12 md:space-y-0 md:space-x-12">
+
+    <!-- About Us -->
+    <div class="flex-1">
+      <h3 class="text-xl font-bold mb-4 text-orange-500">About Mehran Sweets</h3>
+      <p class="text-gray-400">
+        Mehran Sweets has been crafting traditional sweets and baked delights with love and quality for over 25 years. We blend rich heritage with modern taste to serve joy in every bite.
+      </p>
+    </div>
+
+    <!-- Popular Products -->
+    <div class="flex-1">
+      <h3 class="text-xl font-bold mb-4 text-orange-500">Popular Products</h3>
+      <ul class="text-gray-400 space-y-2">
+        <li>✔ Gulab Jamun</li>
+        <li>✔ Chocolate Lava Cake</li>
+        <li>✔ Premium Baklava</li>
+        <li>✔ Cashew Katli</li>
+        <li>✔ Assorted Pastries</li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="flex-1">
+      <h3 class="text-xl font-bold mb-4 text-orange-500">Contact & Locations</h3>
+      <p class="text-gray-400 mb-2"><i class="fas fa-map-marker-alt text-orange-500 mr-2"></i> Main Branch: Saddar, Karachi</p>
+      <p class="text-gray-400 mb-2"><i class="fas fa-phone-alt text-orange-500 mr-2"></i> Phone: 021-12345678</p>
+      <p class="text-gray-400 mb-4"><i class="fas fa-envelope text-orange-500 mr-2"></i> Email: info@mehransweets.com</p>
+      <div class="flex space-x-4 mt-4">
+        <a href="#" class="text-orange-500 hover:text-white"><i class="fab fa-facebook fa-lg"></i></a>
+        <a href="#" class="text-orange-500 hover:text-white"><i class="fab fa-instagram fa-lg"></i></a>
+        <a href="#" class="text-orange-500 hover:text-white"><i class="fab fa-twitter fa-lg"></i></a>
+      </div>
+    </div>
+  </div>
+  <hr class="my-8 border-gray-700">
+
+  <!-- Bottom -->
+  <div class="text-center text-gray-500 text-sm">
+    &copy; 2025 Mehran Sweets. All rights reserved.
+  </div>
+</footer>
+<!-- JavaScript -->
+<script>
+  const loginBtn = document.getElementById('login-btn');
+  const signupBtn = document.getElementById('signup-btn');
+  const loginModal = document.getElementById('login-modal');
+  const signupModal = document.getElementById('signup-modal');
+  const closeLogin = document.getElementById('close-login');
+  const closeSignup = document.getElementById('close-signup');
+  const switchToSignup = document.getElementById('switch-to-signup');
+  const switchToLogin = document.getElementById('switch-to-login');
+  const openMenu = document.getElementById('open-menu');
+  const menuSection = document.getElementById('menu-section');
+
+  loginBtn.onclick = () => loginModal.classList.remove('hidden');
+  signupBtn.onclick = () => signupModal.classList.remove('hidden');
+  closeLogin.onclick = () => loginModal.classList.add('hidden');
+  closeSignup.onclick = () => signupModal.classList.add('hidden');
+
+  switchToSignup.onclick = () => {
+    loginModal.classList.add('hidden');
+    signupModal.classList.remove('hidden');
+  };
+
+  switchToLogin.onclick = () => {
+    signupModal.classList.add('hidden');
+    loginModal.classList.remove('hidden');
+  };
+
+  openMenu.onclick = () => {
+    menuSection.classList.toggle('hidden');
+    menuSection.scrollIntoView({ behavior: 'smooth' });
+  };
+  document.getElementById("login-form").addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+
+  const response = await fetch("/login", {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username, password }),
+  });
+
+  const data = await response.json();
+
+  if (data.token) {
+      // Store the token
+      localStorage.setItem("token", data.token);
+      // Redirect to dashboard
+      window.location.href = "/dashboard";
+  } else {
+      alert("Login failed.");
+  }
+});
+</script>
+</body>
+</html>
